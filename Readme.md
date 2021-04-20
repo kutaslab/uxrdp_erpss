@@ -1,8 +1,8 @@
 ## ERPSS
 
-32-bit compiled EEG data analysis programs
-Kutas Cognitive Electrophysiology Lab
-University of California San Diego
+32-bit compiled EEG data analysis programs  
+Kutas Cognitive Electrophysiology Lab  
+University of California San Diego  
 
 ## Quickstart
 
@@ -21,20 +21,17 @@ docker run -d \
 	uxrdp_erpss
 ```
 
-To bind mount a local drive as read-only in the container use
-`-v`. For example, example bind mount /Users/username/Work as read-only in
-the container as as /home/lab/Work
+Optionally bind mount a local drive as in the container use `-v`. For
+example, mount /Users/username/Work read-only in the container as
+/home/lab/Work like so:
 
 ```
 docker run -d \
 	--name uxrdp_erpss --hostname erpss_server --shm-size 1g \
 	-p 3389:3389 -p 2222:22 \
-	-v /Users/username/Work:/home/lab/Volumes:/mnt:ro \
+	-v /Users/username/Work:/mnt/Work:/mnt:ro \
 	uxrdp_erpss
 ```
-
-docker run -d --name uxrdp_erpss --hostname erpss_server --shm-size 1g
--p 3389:3389 -p 2222:22 -v "$(pwd)":/home/lab/cleave:ro uxrdp_erpss
 
 Connect your Microsoft Remote Desktop client to ```localhost:3389```
 and login is a user `lab`, password `lab`

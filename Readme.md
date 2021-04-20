@@ -12,33 +12,33 @@ In the repository root directory build the docker image:
 docker build -t uxrdp_erpss .
 ```
 
-Start the container:
+* Start the container:
 
-```
-docker run -d \
+  ```
+  docker run -d \
 	--name uxrdp_erpss --hostname erpss_server --shm-size 1g \
 	-p 3389:3389 -p 2222:22 \
 	uxrdp_erpss
-```
+   ```
 
-Optionally bind mount a local drive as in the container use `-v`. For
-example, mount /Users/username/Work read-only in the container as
-/home/lab/Work like so:
+  Optionally bind mount a local drive as in the container use `-v`. For
+  example, mount /Users/username/Work read-only in the container as
+  /home/lab/Work like so:
 
-```
-docker run -d \
+  ```
+  docker run -d \
 	--name uxrdp_erpss --hostname erpss_server --shm-size 1g \
 	-p 3389:3389 -p 2222:22 \
 	-v /Users/username/Work:/mnt/Work:/mnt:ro \
 	uxrdp_erpss
-```
+  ```
 
-Connect your Microsoft Remote Desktop client to ```localhost:3389```
+* Connect Microsoft Remote Desktop client to ```localhost:3389```
 and login is a user `lab`, password `lab`
 
-Open a terminal window navigate to /home/lab/tests and enter
+* In the Ubuntu FXCE desktop, open a terminal window,  navigate to /home/lab/tests and enter
 
-```./run_test.sh```
+  ```./run_test.sh```
 
 
 ---

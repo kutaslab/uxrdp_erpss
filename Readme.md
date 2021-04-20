@@ -51,6 +51,7 @@ and login is a user `lab`, password `lab`
   ```
 
 ---
+
 # Docker image notes
 https://github.com/danielguerra69/ubuntu-xrdp
 

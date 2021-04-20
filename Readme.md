@@ -39,12 +39,22 @@ and login is a user `lab`, password `lab`
 * In the Ubuntu FXCE desktop, open a terminal window,  navigate to /home/lab/tests and enter
 
   ```./run_test.sh```
+  
+  
+* Miniconda is pre-installed for user lab, install the `merp2tbl` utility into the base conda environment like so:
 
+  ```
+  conda activate base
+  conda install merp2tbl -c kutaslab -c defaults -c conda-forge -y
+  cd /home/lab/tests
+  merp2table typical_good.mcf | less -S
+  ```
 
 ---
+# Docker image notes
+https://github.com/danielguerra69/ubuntu-xrdp
 
 ## Ubuntu 20.04/18.04/16.04  Multi User Remote Desktop Server
-https://github.com/danielguerra69/ubuntu-xrdp
 
 Fully implemented Multi User xrdp
 with xorgxrdp and pulseaudio

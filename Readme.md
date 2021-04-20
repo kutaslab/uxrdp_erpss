@@ -6,11 +6,11 @@ University of California San Diego
 
 ## Quickstart
 
-In the repository root directory build the docker image:
+* In the repository root directory build the docker image:
 
-```
-docker build -t uxrdp_erpss .
-```
+  ```
+  docker build -t uxrdp_erpss .
+  ```
 
 * Start the container:
 

@@ -20,10 +20,28 @@ docker build -t uxrdp_erpss .
 	-p 3389:3389 -p 2222:22 \
 	uxrdp_erpss
    ```
+* Connect Microsoft Remote Desktop client to ```localhost:3389```
+and login is a user `lab`, password `lab`
 
-  Optionally bind mount a local drive as in the container use `-v`. For
-  example, mount /Users/username/Work read-only in the container as
-  /home/lab/Work like so:
+* In the Ubuntu FXCE desktop, open a terminal window,  navigate to /home/lab/tests and enter
+
+  ```./run_test.sh```
+  
+  
+* Install the `merp2tbl` utility into the base conda environment like so:
+
+  ```
+  conda activate base
+  conda install merp2tbl -c kutaslab -c defaults -c conda-forge -y
+  cd /home/lab/tests
+  merp2table typical_good.mcf | less -S
+  ```
+
+## Notes
+
+* Miniconda is pre-installed per-user only for user lab.
+
+* To see host files from inside the Ubuntu run the container with the `-v` option like, for example, like so:
 
   ```
   docker run -d \
@@ -33,22 +51,6 @@ docker build -t uxrdp_erpss .
 	uxrdp_erpss
   ```
 
-* Connect Microsoft Remote Desktop client to ```localhost:3389```
-and login is a user `lab`, password `lab`
-
-* In the Ubuntu FXCE desktop, open a terminal window,  navigate to /home/lab/tests and enter
-
-  ```./run_test.sh```
-  
-  
-* Miniconda is pre-installed for user lab, install the `merp2tbl` utility into the base conda environment like so:
-
-  ```
-  conda activate base
-  conda install merp2tbl -c kutaslab -c defaults -c conda-forge -y
-  cd /home/lab/tests
-  merp2table typical_good.mcf | less -S
-  ```
 
 ---
 

@@ -15,9 +15,26 @@ docker build -t uxrdp_erpss .
 Start the container:
 
 ```
-docker run -d --name uxrdp_erpss --hostname erpss_server --shm-size 1g
--p 3389:3389 -p 2222:22 uxrdp_erpss
+docker run -d \
+	--name uxrdp_erpss --hostname erpss_server --shm-size 1g \
+	-p 3389:3389 -p 2222:22 \
+	uxrdp_erpss
 ```
+
+To bind mount a local drive as read-only in the container use
+`-v`. For example, example bind mount /Users/username/Work as read-only in
+the container as as /home/lab/Work
+
+```
+docker run -d \
+	--name uxrdp_erpss --hostname erpss_server --shm-size 1g \
+	-p 3389:3389 -p 2222:22 \
+	-v /Users/username/Work:/home/lab/Volumes:/mnt:ro \
+	uxrdp_erpss
+```
+
+docker run -d --name uxrdp_erpss --hostname erpss_server --shm-size 1g
+-p 3389:3389 -p 2222:22 -v "$(pwd)":/home/lab/cleave:ro uxrdp_erpss
 
 Connect your Microsoft Remote Desktop client to ```localhost:3389```
 and login is a user `lab`, password `lab`
@@ -27,12 +44,10 @@ Open a terminal window navigate to /home/lab/tests and enter
 ```./run_test.sh```
 
 
-
 ---
 
 ## Ubuntu 20.04/18.04/16.04  Multi User Remote Desktop Server
-
-By Daniel Guerra 
+https://github.com/danielguerra69/ubuntu-xrdp
 
 Fully implemented Multi User xrdp
 with xorgxrdp and pulseaudio

@@ -1,5 +1,4 @@
-Installing precompiled ERPSS 32-bit binaries and source on Ubuntu 20.04
-
+Install precompiled ERPSS 32-bit binaries and source on Ubuntu 20.04
 
 Installation
 ------------
@@ -49,13 +48,14 @@ Open a terminal window, navigate to /home/lab/tests and run
 Files
 ------
 
-* The erp.tar tarball is snapshot of ERPSS Slackware 11 /usr/local/erp/* as Paul Krewski left it circa 2017.   The files in this tree are also available on UCSD kutaslab linux /mklab/home/backups/erp/*
+* The erp.tar tarball is snapshot of ERPSS Slackware 11
+  /usr/local/erp/* as Paul Krewski left it circa 2017.  The files in
+  this tree are also available on UCSD kutaslab linux
+  /mklab/home/backups/erp/*
 
-* update_custom.sh creates or extends /etc/profile.d/custom.sh for PATH to to ERPSS executables.
+* update_custom.sh creates or extends /etc/profile.d/custom.sh for
+  PATH to to ERPSS executables.
 
-* tests contains non-human subjects test data files and the run_tests.sh bash script to smoke test the installation.
-
-
-
-
+* tests contains non-human subjects test data files and the
+  run_tests.sh bash script to smoke test the installation.
 

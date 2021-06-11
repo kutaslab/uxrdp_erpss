@@ -19,7 +19,7 @@ RUN addgroup --gid 1001 lab && \
     usermod -aG sudo lab
 RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh && \
     runuser -u lab -- bash /tmp/miniconda.sh -b -p /home/lab/miniconda && \
-    runuser -u lab -- /home/lab/miniconda/bin/conda shell.bash hook >> /home/lab/.bashrc && \
-    runuser -u lab -- echo "conda deactivate" >> /home/lab/.bashrc && \
+    runuser -u lab -- /home/lab/miniconda/bin/conda shell.bash hook | sed  's/conda activate base//' >> /home/lab/.bashrc && \
+    runuser -u lab -- /home/lab/miniconda/bin/conda install mamba -c conda-forge --strict-channel-priority -y && \
     runuser -u lab -- cp -r /opt/erpss_install/tests /home/lab && \
     rm /tmp/miniconda.sh

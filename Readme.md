@@ -6,11 +6,26 @@ University of California San Diego
 
 ## Quickstart
 
-* In the repository root directory build the docker image:
+* `git clone` this repo to the machine where you will build and run the Docker container
+
+* on whatever machine you have ERPSS installed, make a tarball of the `/usr/local/erp` directory as `erp.tgz`
+
+* move or copy `erp.tgz` to the `uxrdp_erpss/erpss_install` directory of this repo.
+
+
+* In the repository root directory build the docker image like so.
 
   ```
   docker build -t uxrdp_erpss .
   ```
+  
+* This will automatically
+  * Install Ubuntu 20.04
+  * Install the XRDP server
+  * Untar `erp.tgz` where it belongs in `/usr/local/erp`
+  * Update `/etc/profile.d/custom.sh` so the default user PATH includes `/usr/local/erp/bin`
+  * Create an admin user, with userid `lab` and password `lab`
+  * Install `minconda3` so user `lab` can create and activate conda environments and install conda packages
 
 * Start the container:
 

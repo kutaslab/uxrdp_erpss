@@ -1,3 +1,7 @@
+## Description
+
+An Ubuntu 20.04 Docker container recipe and support files for testing Kutas Lab compiled 32-bit binary EEG analysis software and conda packages.
+
 ## ERPSS
 
 32-bit compiled EEG data analysis programs  
